@@ -1,0 +1,710 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    background: rgba(245, 242, 242, 0.527);
+    color: black;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 1680px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+}
+
+/* ----------------------------------------------
+                    Header
+----------------------------------------------- */
+
+.header {
+    justify-items: stretch;
+    align-items: stretch;
+    /* border: 2px solid green;  */
+    margin: 0;
+    background: rgba(238, 236, 236, 0.342);
+}
+
+.header >div{
+    display: block;
+    padding: 0px;
+    /*box-shadow: 2px 2px 5px rgb(0, 0, 0, .25);*/
+}
+/* ----------------  BARRA  ---------------- */
+.header .barra{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .barra >div, a{
+    display: flex;
+    color: white;
+}
+.header .chat img{
+    width: 20px;
+    margin-right: 10px;
+}
+.header .empleados img{
+    width: 25px;
+    margin-right: 10px;
+}
+.header .empleados a{
+    margin-top: 3px;
+}
+.header .tarjetas img{
+    width: 30px;
+    margin-left: 15px;
+}
+.header .tarjetas p{
+    margin-top: 4px;
+}
+.header .chat :hover{
+    color: rgb(31, 31, 109);
+    text-decoration: underline;
+}
+.header .empleados :hover{
+    color: rgb(31, 31, 109);
+    text-decoration: underline;
+}
+/* ----------------  LOGO  ---------------- */
+.header .logo{
+    margin-top: -10px;
+    border-right: 33px solid rgba(238, 236, 236, 0.623);
+    border-bottom: 150px solid white;
+    /* border: solid salmon; */
+}
+.header .logo div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-top: 20px;
+}
+.header .logo div img{
+    max-height: 90%;
+}
+
+/* ----------------  CONTACT  ---------------- */
+
+.header .contact{
+    margin-top: -10px;
+    margin-left: -15px;
+    width: 100%;
+    border-left:15px solid transparent;
+    /* border-top: 50px solid rgba(11, 120, 192, 0.644); */
+    border-top: 40px solid white;
+    font-size: 15px;
+}
+
+.header .contact .tb{
+    align-items: center;
+    width: 98%;
+    margin-top: -40px;
+    /* margin-left: 10px; */
+}
+
+.header .contact .btn{
+    margin-top: 5px;
+    border: none;
+    background: transparent;
+}
+/* ----------------  INNOVA  ---------------- */
+.header .innova{
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+.header .innova .slogan{
+    position: absolute;
+    margin-top: 85px;
+    font: oblique bold 70% cursive;
+    color: orange;
+}
+.header .innova a{
+    max-width: 100%;
+}
+.header .innova a img{
+    max-height: 100%;
+}
+/* ----------------  BUSQDA  ---------------- */
+.header .busqda{
+    display: none;
+}
+/* .header .busqueda{
+    display: flex;
+    height: 60%;
+    justify-content: flex-end;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.header .busqueda .buscador{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 80%;
+    border-radius: 3px 0 0 3px;
+}
+
+.header .busqueda .btn{
+    border: none;
+    background: rgb(88, 83, 83);
+    border-radius: 0 3px 3px 0;
+    padding: 0 10px 0 10px;
+    margin: none;
+    cursor: pointer;
+} */
+
+/* ----------------  USUARIO  ---------------- */
+.header .usuario ul{
+    float: right;
+    list-style: none;
+    margin-top: -5px;
+    width: 210px;
+    background: white;
+    padding-left: 10px;
+}
+
+.header .usuario ul li{
+    display: inline-block;
+    margin-right: 5px;
+    padding-bottom: 5px;
+}
+.header .usuario ul li a{
+    padding: 10px 10px 0px 10px;
+    display: block;
+    line-height: 50px;
+}
+
+.header .usuario ul li ul a:hover,
+.header .usuario ul li ul a.activar{
+    font-size: 13px;
+    background:rgba(238, 236, 236, 0.514);
+}
+
+.header .usuario ul li:hover > ul{
+    top: 155px;
+    opacity: 1;
+    visibility: visible;
+    transition: .3s linear;
+}
+
+.header .usuario ul ul{
+    position: absolute;
+    top: 140px;
+    width: 0px;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header .usuario ul ul li{
+    width: 155px;
+    display: list-item;
+    position: relative;
+    border-bottom: 1px solid rgba(180, 180, 180, 0.473);
+    /* background:rgba(230, 226, 226, 0.9); */
+    background: white;
+    left: -110px;
+}
+
+.header .usuario ul ul li a{
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.75);
+}
+
+.header .usuario ul li .lblUsu{
+    float: right;
+    margin-top: -15px;
+    font-size: 12px;
+}
+
+/* ----------------  MENU  ---------------- */
+
+.header .menu{
+    position: relative;
+    box-shadow: 2px 0px 2px rgb(0, 0, 0, .25);
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.header .menu .btnMenu {
+    outline:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    position: fixed;
+    left: 10px;
+    z-index: 5;
+    background: white;
+    /* background: rgba(230, 226, 226, 0.342); */
+    border-radius: 50%;
+    border: 1px solid rgba(230, 226, 226, 0.342);
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: translateX(-60px);
+    visibility: hidden;
+}
+.header .menu .btnMenu:hover{
+    background: rgba(230, 226, 226, 0.342);
+    margin-left: 1%;
+}
+.header .menu .elementos{
+    position: relative;
+}
+.header .menu .elementos ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -60px;
+    width: 60%;
+
+}
+
+.header .menu .elementos li a{
+    display: block;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0px 14px;
+}
+
+.header .menu .elementos li :hover{
+    background:rgba(189, 189, 189, 0.651);
+    text-decoration: underline black;
+}
+.header .menu .busqueda{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    /* background: red; */
+    height: 50px;
+    margin-top: -47px;
+    width: 40%;
+
+}
+.header .menu .busqueda .buscador{
+    border: solid .7px rgba(122, 122, 122, 0.863);
+    outline: none;
+    font-size: 13px;
+    width: 80%;
+    max-width: 350px;
+    height: 73%;
+    border-radius: 3px 0 0 3px;
+    padding-left: 30px;
+}
+
+.header .menu .busqueda .btn{
+    border: none;
+    background: rgb(88, 83, 83);
+    border-radius: 0 3px 3px 0;
+    padding: 0 10px 0 10px;
+    height: 75%;
+    margin: none;
+    cursor: pointer;
+}
+.header .menu .elementos .logoMenu{
+    visibility: hidden;
+    margin: 5px 0 5px 3%;
+}
+
+.nav_fixed .menu{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    max-width: 1680px;
+}
+
+.header .menu .ver_logo .logoMenu{
+    /* visibility: visible; */
+}
+
+.header .menu .centrar_txt ul{
+    margin: -55px 14px 4px;
+}
+.header .menu .centrar_busqueda .busqueda{
+    margin-top: -53px;
+}
+/* ----------------------------------------------
+                    CONTENEDOR
+----------------------------------------------- */
+.contenedor{
+    justify-items: stretch;
+    /* border: 2px solid red;  */
+    margin: auto;
+    text-align: center;
+}
+
+.contenedor >div{
+    display: block;
+    padding: 0px;
+    /* box-shadow: 2px 2px 5px rgb(0, 0, 0, .25); */
+}
+
+/* ----------------  SLIDER  ---------------- */
+
+.contenedor .slider{
+    position: relative;
+}
+
+.contenedor .slider .elemSlider ul, ol{
+    list-style: none;
+}
+.contenedor .slider ol li span{
+    padding: 5px;
+}
+.contenedor .slider .elemSlider li section{         /*Ocultamos letras del slider*/
+    display: none;
+}
+.contenedor .slider .elemSlider li, ul{
+    width: 100%;
+}
+
+.contenedor .slider .elemSlider li img{
+    max-width: 100%;
+}
+
+.contenedor .slider .texto{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    padding: 15px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: white;
+}
+
+.contenedor .slider .texto h1{
+    font-size: 50px;
+}
+
+.contenedor .slider .texto p{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.contenedor .slider .paginacion{
+    position: absolute;
+    top: 85%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.contenedor .slider .paginacion li{
+    cursor: pointer;
+    font-size: 45px;
+    margin-right: 5px;
+    color: black;
+}
+
+.contenedor .slider .izq, .der{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 2;
+    cursor: pointer;
+}
+.contenedor .slider .der img{
+    width: 40px;
+}
+.contenedor .slider .izq img{
+    width: 40px;
+}
+.contenedor .slider .izq{
+    left: .5px;
+}
+
+.contenedor .slider .der{
+    right: .5px;
+}
+/* ----------------  OFERTAS  ---------------- */
+.contenedor .ofertas {
+    margin: 0 5px 0 5px;
+}
+.contenedor .ofertas div img{
+    border: solid .5px rgba(189, 189, 189, 0.651);
+    border-radius: 5px;
+}
+.ofertas  div img:hover{
+    box-shadow: 0 0 10px rgba(92, 92, 92, 0.616);
+    cursor: pointer;
+    transform: scale(1.04,1.04);
+}
+
+
+/* ---------------- PRODUCTOS  ---------------- */
+
+.contenedor .productos{
+   margin-top: 70px;
+   width: 100%;
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.contenedor .productos .tproductos{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: -240px;
+    font-size: 30px;
+}
+.contenedor .productos .prod{
+    width: 220px;
+    height: 330px;
+    box-shadow: 0px 0px 5px rgba(173, 173, 173, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0 10px 10px 10px;
+}
+.contenedor .productos .prod .comprar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 218px;
+    height: 325px;
+    background: rgba(253, 253, 253, 0.842);
+    visibility: hidden;
+}
+.contenedor .productos .prod .comprar button{
+    width: 140px;
+    height: 35px;
+    border-radius: 5px;
+    background: yellow;
+    box-shadow: 0 0 5px rgb(64, 73, 156);
+    border: none;
+    color: black;
+    margin: 15px 0 15px 0;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.contenedor .productos .prod .comprar :hover{
+    transform: scale(1.03,1.03);
+    transition: 0.2s;
+}
+.contenedor .productos .dsc{
+    position: absolute;
+    float: left;
+    padding: 5px;
+    background: red;
+    border-radius: 10%;
+    margin-left: 5px;
+    margin-top: 3px;
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+}
+.contenedor .productos .imgProd{
+    max-width: 100%;
+    max-height: 100%;
+}
+.contenedor .productos .prod .descrip{
+    padding-left: 5px;
+}
+.contenedor .productos .detalles{
+    display: flex;
+    align-items: center;   
+}
+.contenedor .productos .detalles .precio{
+    font-size: 18px;
+    color: lightslategray;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+.contenedor .productos .detalles .desc{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.contenedor .productos div ul li :hover .comprar{
+    visibility: visible;
+    -webkit-transform:scale(1.03);transform:scale(1.03);
+    transition: .5s;
+}
+
+/* ----------------  CATEGORIAS  ---------------- */
+
+.contenedor .categorias{
+    width: 90%;
+    margin-left: 5%;
+}
+.contenedor .categorias >div{
+    margin-bottom: 10px;
+    font-size: 16px;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+.contenedor .categorias div h2{
+    font-size: 27px;
+}
+.contenedor .categorias div a{
+    color: black;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.contenedor .categorias div .btnCat{
+    display: inline-flex;
+    justify-content: center;
+    width: 100px;
+    border: solid rgba(189, 189, 189, 0.651);
+    border-radius: 50%;
+    background: white;
+}
+
+.contenedor .categorias div .btnCat img{
+    width: 60%;
+    padding: 30px;
+}
+
+.contenedor .categorias div .btnCat :hover{
+    transform: scale(1.15,1.15);
+    transition: 0.2s;
+}
+.contenedor .categorias div :hover{
+    color: rgb(212, 41, 41);
+    text-decoration: underline;
+    font-size: 18px;
+}
+.contenedor .categorias .cTitulo :hover{
+    color: black;
+    text-decoration: none; 
+    font-size: 27px;
+}
+
+
+/* ----------------  MENBRETE  ---------------- */
+
+.contenedor .membrete{
+    text-align: center;
+}
+.contenedor .membrete img{
+    width: 16%;
+    min-width: 160px;
+    padding-top: 20px;
+}
+.contenedor .membrete p{
+    color: rgb(114, 114, 114);
+    font-size: 16px;
+    padding-top: 15px;
+    /* padding-bottom: 20px; */
+} 
+.contenedor .membrete hr{
+    border: transparent;
+    border-top: 1px solid rgba(209, 204, 204, 0.479) ;
+    width: 99%;
+    margin-left: .5%;
+}
+/* ----------------  INFORMACION  ---------------- */
+
+.contenedor .informacion{
+    margin-top: -70PX;
+    background: rgb(83, 83, 83); 
+    color: white;
+}
+.contenedor .informacion >div{
+    /* background: rgb(0, 0, 0); */
+    text-align: left;  
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+}
+.contenedor .informacion div h1{
+    font-size: 13px;
+    padding-bottom: 30px;
+    text-decoration: underline;
+}
+.contenedor .informacion div{
+    font-size: 13px;
+    color: white;
+}
+.contenedor .informacion div a{
+    font-size: 13px;
+    color: white;
+}
+.contenedor .informacion div div :hover{
+    color: rgb(156, 155, 155);
+}
+.contenedor .informacion .siguenos{
+    margin-top: 10%;
+    /* background: red; */
+}
+.contenedor .informacion .siguenos div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.sliderp{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderp ul li .pr{
+    width: 350px;
+    height: 610px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px;
+}
+.sliderp ul li .pr .model{
+    height: 350px;
+    max-height: 100%;
+    max-width: 100%;   
+}
+.sliderp ul li .pr .detalles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;   
+}
+.sliderp ul li .pr .detalles p{
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ----------------------------------------------
+                    RESPONSIVE
+----------------------------------------------- */
+
+/* ---------------- SLIDER  ---------------- */
+
+

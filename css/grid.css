@@ -1,0 +1,510 @@
+.header{
+    display: grid;
+    grid-gap: 10px;
+    /* grid-template-columns: minmax(150px, 300px) minmax(300px, 700px) minmax(140px, 250px); */
+    grid-template-columns: 250px minmax(300px, auto) 225px;
+    grid-template-rows: 30px 40px 90px 50px;
+    grid-template-areas: "barra  barra     barra"
+                         "logo  contact     contact"
+                         "logo  innova    usuario"
+                         "menu  menu        menu";
+    /* border: solid red; */
+}
+
+.header .barra {
+    grid-area: barra;
+    background: rgba(255, 72, 0, 0.897);
+}
+.header .logo {
+    grid-area: logo;
+    background: white;
+}
+
+.header .contact {
+    grid-area: contact;
+    /* border: solid salmon; */
+}
+
+.header .innova {
+    grid-area: innova;
+    border: solid salmon;
+}
+
+.header .usuario {
+    grid-area: usuario;
+    z-index: 3;
+    /* border: solid salmon; */
+}
+
+.header .menu{
+    grid-area: menu;
+    background: white;
+    z-index: 2;
+}
+
+/* ---------------- CONTENEDOR  ---------------- */
+
+.contenedor{
+    display: grid;
+    grid-gap: 70px;
+    grid-template-columns: minmax(100px, 1fr);
+    /*                        Slider              Ofertas           Productos           Categorias          Menbrete            Informacion*/
+    grid-template-rows: minmax(105px, auto) minmax(200px, auto) minmax(200px, auto) minmax(200px, auto) minmax(50px, auto) minmax(100px, auto);
+    /* border: solid maroon; */
+}
+
+.contenedor .slider{
+    background: none;
+}
+
+.contenedor .ofertas{
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr) minmax(250px, 1fr);
+    /* grid-template-columns: minmax(auto, 400px) minmax(auto, 400px) minmax(auto, 400px); */
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .categorias{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: minmax(auto, 60px) 1fr;
+    grid-template-areas: "cTitulo   cTitulo    cTitulo    cTitulo    cTitulo"
+                         "cat1      cat2        cat3      cat4       cat5";
+}
+.contenedor .categorias .cTitulo {
+    grid-area: cTitulo;
+}
+.contenedor .categorias .cat1 {
+    grid-area: cat1;
+}
+.contenedor .categorias .cat2 {
+    grid-area: cat2;
+}
+.contenedor .categorias .cat3 {
+    grid-area: cat3;
+}
+.contenedor .categorias .cat4 {
+    grid-area: cat4;
+}
+.contenedor .categorias .cat5 {
+    grid-area: cat5;
+}
+.contenedor .membrete{
+    background: rgb(255, 252, 252);
+}
+
+.contenedor .informacion{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 25%;
+    grid-template-rows: minmax(250px, auto);
+    /* border: solid salmon; */
+}
+
+
+/* ----------------------------------------------
+                    RPSV
+----------------------------------------------- */
+
+
+/* **********  REDISTRIBUCION  ********** */
+
+
+@media screen and (max-width: 885px){
+    /* ----------- HEADER  ----------- */
+    .header{
+        grid-template-rows: 30px 40px 50px;
+        grid-template-columns: minmax(100px, auto) minmax(30px,250px) minmax(100px,auto) minmax(100px, auto);
+        grid-template-areas: "barra  barra  barra     barra"
+                             "menu   logo   innova    usuario"
+                             "menu   logo   innova    busqda";
+    }
+    .header .busqda{
+        grid-area: busqda;
+    }
+    .header .contact{
+        display: none;
+    }
+    /* _____________  Barra  _____________ */
+    .header .barra{
+        font-size: 14px;
+    }
+    .header .chat img{
+        margin-right: 5px;
+    }
+    .header .chat a{
+        margin-top: 2px;
+    }
+    .header .empleados img{
+        margin-right: 5px;
+    }
+    .header .empleados a{
+        margin-top: 5px;
+    }
+    .header .tarjetas p{
+        margin-top: 6px;
+    }
+    .header .tarjetas img{
+        margin-left: 10px;
+    }
+    /* _____________  Logo  _____________ */
+    .header .logo{
+        width: 90%;                 /*Largo del fondo blanco diagonal*/
+        border-bottom: 110px solid white;       /*Alto del fondo blanco diagonal*/ 
+        margin-left: -215px; 
+        min-width: 280px; 
+    }
+    .header .logo div{
+        margin-left: 160px;
+        margin-top: -5px;
+    }
+    .header .logo div img{
+        height: 75%;
+    }
+    /* _____________  Menu  _____________ */
+    .header .menu{
+        /* background: white; */
+        background: transparent;
+        box-shadow: none;
+        z-index: 3;
+    }
+    .header .menu .elementos{
+        position: absolute;
+        background: white;
+        width: 300px;                   /*Largo del menu*/
+        margin-left: -300%;
+        margin-top: 100px;
+        box-shadow: 2px 0 rgba(95, 95, 95, 0.425);
+    }
+    .header .menu .elementos ul{
+        flex-direction: column;
+    }
+    .header .menu .elementos ul li{
+        border-bottom: solid 1px rgba(230, 226, 226, 0.342);
+        margin-right: 15px;
+    }
+    .header .menu .btnMenu{
+        /* transform: translateX(10px); */
+        margin-top: 25px;
+        transform: translateX(20px);
+        visibility: visible;
+    }
+    .header .menu .menuAparecer{
+        margin-left: 0;
+        margin-top: 100px;
+        transition: all 0.5s;
+        z-index: 4;
+    }
+    .nav_fixed .menu{
+        right: 350px;
+    }
+    .header .menu .innovakids{
+        margin-top: -100px;
+        margin-right: -170px;
+        z-index: 1;
+    }
+    .header .menu .innovakids img{
+        width: 55px;
+        border-radius: 5px 5px 5px 5px;
+        padding: 0 5px 0 5px;
+        background: white;
+    }
+    .header .mover .innovakids{
+        margin-top: -10px;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        transition: 2.5s;
+    }
+    .header .menu .ver_logo .logoMenu{
+        visibility: hidden;
+    }
+    .header .menu .busqueda{
+        display: none;
+    }
+    /* _____________  Innova  _____________ */
+    .header .innova{
+        position: absolute;
+        width: 30%;
+        height: 110px;
+        margin-left: 33%;
+        margin-top: 30px;
+    }
+    /* _____________  Busqda  _____________ */
+    .header .busqda{
+        display: block;
+    }
+    .header .busqda{
+        display: flex;
+        height: 100%;
+        justify-content: flex-end;
+        align-content: center;
+        margin-top: 10px;
+    }
+    .header .busqda .buscador{
+        border: solid .7px rgba(122, 122, 122, 0.863);
+        outline: none;
+        font-size: 13px;
+        width: 80%;
+        max-width: 350px;
+        height: 73%;
+        border-radius: 3px 0 0 3px;
+        padding-left: 30px;
+    }
+    
+    .header .busqda .btn{
+        border: none;
+        background: rgb(88, 83, 83);
+        border-radius: 0 3px 3px 0;
+        padding: 0 10px 0 10px;
+        height: 75%;
+        margin: none;
+        cursor: pointer;
+    }
+    
+    /* _____________  Usuario  _____________ */
+    .header .usuario{
+        margin-top: -5px;
+    }
+    .header .usuario ul{
+        width: 185px;
+    }
+    .header .usuario ul li{
+        padding-bottom: 0;
+    }
+    .header .usuario ul li a{
+        padding: 0 7px 0 7px;
+    }
+    .header .usuario ul li a img{
+        width: 20px;
+    }
+    .header .usuario ul .carrito a img{
+        padding: 0 5px 0 5px;
+    }
+    .header .usuario ul li:hover > ul{
+        top: 85px;
+    }
+    .header .usuario ul ul{
+        top: 70px;
+    }
+    .header .usuario ul ul li{
+        left: -120px;
+    }
+    .header .usuario ul ul li a{
+        font-size: 10px;
+    }
+    .header .usuario ul li ul a:hover,
+    .header .usuario ul li ul a.activar{
+        font-size: 11px;
+    }
+    .header .usuario ul li .lblUsu{
+        float: left;
+        margin-top: -15px;
+        font-size: 10px;
+    }
+    /* ----------- CONTENEDOR  ----------- */
+    /* _____________  Slider  _____________ */
+    .contenedor .slider .texto h1{
+        font-size: 40px;
+    }
+    .contenedor .slider .texto p{
+        font-size: 18px;
+    }
+    .contenedor .slider .izq, .der{
+        font-size: 40px;
+    }
+
+    /* _____________  Ofertas  _____________ */
+    .contenedor .ofertas{
+        grid-gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "oferta1  oferta2"
+                             "oferta3  oferta3";
+        justify-content: center;
+        width: 94%;
+        margin-left: 3%;
+    }
+    .contenedor .ofertas .oferta1 {
+        grid-area: oferta1;
+    }
+    .contenedor .ofertas .oferta2 {
+        grid-area: oferta2;
+    }
+    .contenedor .ofertas .oferta3 {
+        grid-area: oferta3;
+        width: 50%;
+        margin-left: 25%;
+    }
+    .ofertas  div img:hover{
+        transform: scale(1.03,1.03);
+    }
+
+    /* _____________  Productos  _____________ */
+    .contenedor .productos .prod{
+        width: 200px;
+        height: 310px;
+    }
+    .contenedor .productos .prod .descrip{
+        font-size: 15px;
+    }
+    .contenedor .productos .prod .comprar{
+        width: 195px;
+        height: 305px;
+        margin-left: 2px;
+    }
+    .contenedor .productos .prod .comprar button{
+        width: 130px;
+        height: 30px;
+    }
+    /* _____________  Categorias  _____________ */
+    /* .contenedor .categorias{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(auto, 60px) minmax(100px, auto) minmax(100px, auto);
+        grid-template-areas: "cTitulo   cTitulo    cTitulo"
+                             "cat1      cat2        cat3"
+                             "cat4      blanco            cat5";
+    }
+    .contenedor .categorias div .btnCat{
+        width: 60%;
+        margin-left: 20%;
+    }
+    
+    .contenedor .categorias div .btnCat img{
+        width: 60%;
+        padding: 30px;
+    } */
+
+    .contenedor .categorias{
+        width: 100%;
+        margin-left: 0;
+    }
+    .contenedor .categorias div a{
+        font-size: 15px;
+    }
+    .contenedor .categorias div .btnCat{
+        width: 90px;
+    }
+    .contenedor .categorias div .btnCat img{
+        width: 55%;
+        padding: 20px;
+    }
+    .contenedor .categorias div :hover{
+        font-size: 16px;
+    }
+
+    /* _____________  Informacion  _____________ */
+    .contenedor .informacion{
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(200px, auto);
+    }
+
+}
+
+@media screen and (max-width: 830px){
+    /* ----------- HEADER  ----------- */
+    .header .menu .btnMenu{
+        transform: translateX(0px);
+    }
+    .header .menu .btnMenu img{
+        width: 26px;
+    }
+    .header .logo div img{
+        height: 70%;
+    }
+    .header .busqueda{
+        margin-left: -25%
+    }
+    /* ----------- CONTENEDOR  ----------- */
+}
+@media screen and (max-width: 755px){
+    /* ----------- HEADER  ----------- */
+    .header .logo div img{
+        height: 65%;
+    }
+    .header .busqueda{
+        margin-left: -20%
+    }
+    /* ----------- CONTENEDOR  ----------- */
+    .contenedor .slider .texto h1{
+        font-size: 36px;
+    }
+     .contenedor .slider .texto p{
+        font-size: 17px;
+    }
+    .contenedor .slider .izq, .der{
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 685px){
+    /* ----------- HEADER  ----------- */
+    .header .busqueda{
+        margin-left: -15%
+    }
+    /* ----------- CONTENEDOR  ----------- */
+    .contenedor .slider .paginacion{
+        display: none;
+    }
+    .contenedor .slider .texto p{
+        display: none;
+    }
+    .contenedor .slider .texto h1{
+        font-size: 30px;
+    }
+    .contenedor .slider .izq, .der{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 620px){
+    /* ----------- HEADER  ----------- */
+    .header .barra .empleados{
+        display: none;
+    }
+    .header .busqueda{
+        height: 65%;
+    }
+    .header .busqueda{
+        margin-left: -10%
+    }
+    .header .busqueda .btn img{
+        width: 17px;
+    }
+    /* ----------- CONTENEDOR  ----------- */
+    .contenedor .categorias div a{
+        font-size: 14px;
+    }
+    .contenedor .categorias div .btnCat{
+        width: 80px;
+    }
+    .contenedor .categorias div .btnCat img{
+        width: 50%;
+        padding: 20px;
+    }
+    .contenedor .categorias div :hover{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    /* ----------- HEADER  ----------- */
+    .header .busqueda{
+        margin-left: -5%
+    }
+    /* ----------- CONTENEDOR  ----------- */
+}
+
+@media screen and (max-width: 540px){
+    /* ----------- HEADER  ----------- */
+    .header .busqueda .btn{
+        width: 50px;
+    }
+    /* ----------- CONTENEDOR  ----------- */
+    .contenedor .slider .texto h1{
+        font-size: 25px;
+    }
+}
